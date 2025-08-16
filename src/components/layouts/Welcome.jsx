@@ -4,7 +4,8 @@ export default function Welcome() {
             <h3 className="text-large special-shadow">365 Days.<br />365 Words.</h3>
 
             <h6>
-                Build your Lexicon. <br /> Start Your Challenge Today!
+                Build your Lexicon
+                <br /> Start Your Challenge Today!
             </h6>
 
             <div>
