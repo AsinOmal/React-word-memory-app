@@ -5,13 +5,13 @@ export default function Welcome() {
 
             <h6>
                 Build your Lexicon
-                <br /> Start Your Challenge Today!
+                <br /> Start the Challenge Today!
             </h6>
 
             <div>
                 <input type="text" placeholder="Enter your Name..." />
                 <button>
-                    <h6>Start &rarr;</h6>
+                    <h6>Start  &rarr;</h6>
                 </button>
             </div>
         </section>
