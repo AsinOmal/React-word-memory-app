@@ -1,5 +1,13 @@
+import Stats from "../Stats";
+import History from "../History";
+import Countdown from "../Countdown";
+
 export default function Dashboard() {
     return (
-        <div>Dashboard</div>
+        <section id="dashboard">
+            <Stats />
+            <Countdown />
+            <History />
+        </section>
     )
 }
