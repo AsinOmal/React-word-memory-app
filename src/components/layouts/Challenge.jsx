@@ -1,5 +1,8 @@
 export default function Challenge() {
-    return(
-        <div>Challenge</div>
+    const word = 'Copacetic'
+    const definition = 'In Excellent Order'
+
+    return (
+       
     )
 }
