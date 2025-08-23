@@ -36,7 +36,7 @@ export default function Challenge() {
                 </button>
             </div>
 
-            <ProgressBar/>
+            <ProgressBar />
         </section>
     )
 }
