@@ -1,8 +1,8 @@
 import ProgressBar from "../ProgressBar"
 
 export default function Challenge() {
-    const word = 'Copacetic'
-    const definition = 'In Excellent Order'
+    const word = 'Brainiac'
+    const definition = 'Exceptionally intelligent person.'
 
     return (
         <section id="challenge">
