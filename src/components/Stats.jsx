@@ -1,9 +1,10 @@
 import ProgressBar from './ProgressBar';
 
 
-export default function Stats() {
+export default function Stats(props) {
+    const { name } = props
 
-    const name = 'Asin'
+    // const name = 'Asin'
     const day = 20
 
     return (

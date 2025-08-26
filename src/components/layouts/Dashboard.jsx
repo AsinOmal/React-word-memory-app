@@ -2,10 +2,11 @@ import Stats from "../Stats";
 import History from "../History";
 import Countdown from "../Countdown";
 
-export default function Dashboard() {
+export default function Dashboard(props) {
+
     return (
         <section id="dashboard">
-            <Stats />
+            <Stats {...props} />
             <Countdown />
             <History />
         </section>
