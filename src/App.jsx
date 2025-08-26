@@ -13,8 +13,19 @@ function App() {
 
   const [name, setName] = useState('')
 
+  function handleChangePange(pageIndex) {
+    setSeletedPage(pageIndex)
+  }
+
+  function handleCreateAccount() {
+    if (!name) { return }
+    localStorage.setItem('username', name)
+    handleChangePange(1)
+  }
+
+
   const pages = {
-    0: <Welcome name={name} username="hello world" setName={setName} />,
+    0: <Welcome handleCreateAccount = {handleCreateAccount} name={name} username="hello world" setName={setName} />,
     1: <Dashboard />,
     2: <Challenge />,
   }

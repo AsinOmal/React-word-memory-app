@@ -1,7 +1,5 @@
 export default function Welcome(props) {
-    const {name, setName} = props
-
-    console.log('PROPS', props)
+    const { name, setName, handleCreateAccount } = props
 
     return (
         <section id="welcome">
@@ -17,8 +15,8 @@ export default function Welcome(props) {
                     console.log(e.target.value)
                     setName(e.target.value)
                 }}
-                type="text" placeholder="Enter your Name..." />
-                <button>
+                    type="text" placeholder="Enter your Name..." />
+                <button onClick={handleCreateAccount} disabled={!name} >
                     <h6>Start  &rarr;</h6>
                 </button>
             </div>
