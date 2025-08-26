@@ -3,6 +3,7 @@ import History from "../History";
 import Countdown from "../Countdown";
 
 export default function Dashboard(props) {
+    
 
     return (
         <section id="dashboard">

@@ -12,6 +12,10 @@ function App() {
   // zero is for welcome, 1 is for dashboard, 2 is for challenge
 
   const [name, setName] = useState('')
+  const [day, setDay] = useState(1)
+  const [datetime, setDatetime] = useState(null)
+  const [History, setHistory] = useState([])
+  const [attempts, setAttempts] = useState(0)
 
   function handleChangePage(pageIndex) {
     setSeletedPage(pageIndex)
