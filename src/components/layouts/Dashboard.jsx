@@ -3,13 +3,13 @@ import History from "../History";
 import Countdown from "../Countdown";
 
 export default function Dashboard(props) {
-    
+
 
     return (
         <section id="dashboard">
             <Stats {...props} />
-            <Countdown />
-            <History />
+            <Countdown {...props} />
+            <History {...props} />
         </section>
     )
 }

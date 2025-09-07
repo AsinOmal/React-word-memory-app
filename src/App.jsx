@@ -4,6 +4,8 @@ import Dashboard from "./components/layouts/Dashboard"
 import Challenge from "./components/layouts/Challenge"
 import { useState, useEffect } from "react"
 
+import WORDS from "./utils/VOCAB.json"
+import { getWordByIndex, PLAN } from './utils'
 
 
 function App() {
@@ -16,6 +18,13 @@ function App() {
   const [datetime, setDatetime] = useState(null)
   const [History, setHistory] = useState([])
   const [attempts, setAttempts] = useState(0)
+
+  // console.log(PLAN);
+
+  const daysWords = PLAN[day].map((idx) => {
+    return getWordByIndex(WORDS, idx).word
+  })
+  console.log(daysWords)
 
   function handleChangePage(pageIndex) {
     setSeletedPage(pageIndex)
@@ -30,8 +39,8 @@ function App() {
   //! this callback function is triggered on page load
   useEffect(() => {
     if (!localStorage) { return }
-    //if we don't have access to the database, 
-    // then exit the callback function
+    // if we don't have access to the database, 
+    // then exit the callback function 
 
     if (localStorage.getItem('username')) {
       // if we find the item, (get item returns something) 
@@ -51,7 +60,9 @@ function App() {
       name={name} username="hello world"
       setName={setName}
     />,
-    1: <Dashboard name={name} />,
+    1: <Dashboard name={name} attempts={attempts} PLAN={PLAN} day={day}
+      handleChangePage={handleChangePage} daysWords={daysWords} datetime={datetime} history={history}
+    />,
     2: <Challenge />,
   }
 
