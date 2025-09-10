@@ -21,7 +21,7 @@ export default function Countdown(props) {
                     <p>Time Remaining</p>
                     <h3>{
                         datetime ?
-                            `${Math.abs(timer.hours)}H ${Math.abs(timer.minutes)}M ${Math.abs(timer.seconds)}S}`
+                            `${Math.abs(timer.hours)}H ${Math.abs(timer.minutes)}M ${Math.abs(timer.seconds)}S`
                             : '24H 60M 60S'
                     }</h3>
                 </div>

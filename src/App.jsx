@@ -36,6 +36,23 @@ function App() {
     handleChangePage(1)
   }
 
+  function handleCompleteDay() {
+    const newDay = day + 1
+    const newDatetime = Date.now()
+    setDay(newDay)
+    setDatetime(newDatetime)
+
+    localStorage.setItem('day', JSON.stringify({ day: newDay, datetime: newDatetime }))
+
+    setSeletedPage(1)
+  }
+
+  function handleIncrementAttempts() {
+    // take the current attempt number, and add one save it to local storage.
+    const newRecord = attempts + 1
+    localStorage.setItem('attempts', newRecord)
+    setAttempts(newRecord)
+  }
   //! this callback function is triggered on page load
   useEffect(() => {
     if (!localStorage) { return }
@@ -63,7 +80,9 @@ function App() {
     1: <Dashboard name={name} attempts={attempts} PLAN={PLAN} day={day}
       handleChangePage={handleChangePage} daysWords={daysWords} datetime={datetime} history={history}
     />,
-    2: <Challenge />,
+    2: <Challenge day={day} daysWords={daysWords} handleChangePage={handleChangePage}
+      handleIncrementAttempts={handleIncrementAttempts} handleCompleteDay={handleCompleteDay}
+      PLAN= {PLAN}/>,
   }
 
 
