@@ -5,7 +5,7 @@ import Challenge from "./components/layouts/Challenge"
 import { useState, useEffect } from "react"
 
 import WORDS from "./utils/VOCAB.json"
-import { getWordByIndex, PLAN } from './utils'
+import { countdownIn24Hours, getWordByIndex, PLAN } from './utils'
 
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
   const [name, setName] = useState('')
   const [day, setDay] = useState(1)
   const [datetime, setDatetime] = useState(null)
-  const [History, setHistory] = useState([])
+  const [history, setHistory] = useState({})
   const [attempts, setAttempts] = useState(0)
 
   // console.log(PLAN);
@@ -42,7 +42,9 @@ function App() {
     setDay(newDay)
     setDatetime(newDatetime)
 
-    localStorage.setItem('day', JSON.stringify({ day: newDay, datetime: newDatetime }))
+    localStorage.setItem('day', JSON.stringify(
+      { day: newDay, datetime: newDatetime }
+    ))
 
     setSeletedPage(1)
   }
@@ -68,6 +70,43 @@ function App() {
       setSeletedPage(1)
     }
 
+    if (localStorage.getItem('attempts')) {
+      // then we found attempts
+      setAttempts(parseInt(localStorage.getItem('attempts')))
+    }
+
+    if (localStorage.getItem('history')) {
+      setHistory(JSON.parse(localStorage.getItem('history')))
+    }
+
+    if (localStorage.getItem('day')) {
+      const { day: d, datetime: dt } = JSON.parse(localStorage.getItem('day'))
+      setDatetime(dt)
+      setDay(d)
+
+      if (d > 1 && dt) {
+        const diff = countdownIn24Hours(dt)
+        console.log(diff)
+        if (diff < 0) {
+          console.log('Failed Challenge')
+          let newHistory = { ...history }
+          const timestamp = new Date(dt)
+          const formattedTimestamp = timestamp.toString().split(' ').slice(1, 4).join(' ')
+
+          newHistory[formattedTimestamp] = d
+          setHistory(newHistory)
+          setDay(1)
+          setDatetime(null)
+          setAttempts(0)
+
+          localStorage.setItem('attempts', 0)
+          localStorage.setItem('history', JSON.stringify(newHistory))
+          localStorage.setItem('day', JSON.stringify({ day: 1, datetime: null }))
+        }
+      }
+
+    }
+
   }, [])
 
 
@@ -82,7 +121,7 @@ function App() {
     />,
     2: <Challenge day={day} daysWords={daysWords} handleChangePage={handleChangePage}
       handleIncrementAttempts={handleIncrementAttempts} handleCompleteDay={handleCompleteDay}
-      PLAN= {PLAN}/>,
+      PLAN={PLAN} />,
   }
 
 
