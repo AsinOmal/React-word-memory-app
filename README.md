@@ -1,4 +1,4 @@
-````markdown
+
 # React Word Memory App
 
 A full-featured word memorization app built with React. The app helps users learn advanced English vocabulary through spaced repetition, gamification, and local data persistence. It works on both desktop and mobile and can be deployed to the web.
