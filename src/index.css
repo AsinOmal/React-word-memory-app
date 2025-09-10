@@ -220,7 +220,7 @@ section {
 }
 
 .incorrect {
-  background: oklch(.656 .241 354.308) !important;
+  background: oklch(0.656 0.241 354.308) !important;
 }
 /* PORTAL */
 
