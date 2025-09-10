@@ -2,7 +2,7 @@
 
 [![React](https://img.shields.io/badge/React-17.0.2-blue?logo=react&logoColor=white)](https://reactjs.org/) 
 [![License](https://img.shields.io/badge/License-MIT-green)](LICENSE) 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/your-netlify-badge-id/deploy-status)](https://app.netlify.com/sites/your-site-name/deploys)
+[![Netlify Status](https://img.shields.io/badge/Netlify-Deploy-informational?logo=netlify&logoColor=white)](https://app.netlify.com/)
 
 A full-featured word memorization app built with React. The app helps users learn advanced English vocabulary through spaced repetition, gamification, and local data persistence. It works on both desktop and mobile and can be deployed to the web.
 
