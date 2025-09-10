@@ -112,7 +112,3 @@ This project is licensed under the MIT License.
 
 * [React](https://reactjs.org/)
 * [Vite](https://vitejs.dev/)
-
-```
-
-
